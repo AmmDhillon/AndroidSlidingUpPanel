@@ -844,7 +844,11 @@ public class SlidingUpPanelLayout extends ViewGroup {
                 continue;
             }
 
+            //final int childHeight = child.getMeasuredHeight();
             final int childHeight = child.getMeasuredHeight();
+            if (i == 0) {
+                childHeight = b - t - mPanelHeight - paddingTop - getPaddingBottom();
+            }
             int childTop = paddingTop;
 
             if (child == mSlideableView) {
